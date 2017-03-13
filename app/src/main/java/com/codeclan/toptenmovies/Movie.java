@@ -40,6 +40,9 @@ public class Movie {
         this.ranking = ranking;
     }
 
+
+
+
     @Override
     public String toString(){
         return "Title: '" + this.title + "', Genre: '" + this.genre + "', Ranking: " + this.ranking;
