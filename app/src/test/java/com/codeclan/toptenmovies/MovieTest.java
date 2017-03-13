@@ -51,4 +51,10 @@ public class MovieTest {
         movie.setRanking(2);
         assertEquals(2, movie.getRanking());
     }
+
+    @Test
+    public void toStringReturnsFullDetails(){
+        String expectedString = "Title: 'Mighty Ducks', Genre: 'Family', Ranking: 1";
+        assertEquals(expectedString, movie.toString());
+    }
 }
