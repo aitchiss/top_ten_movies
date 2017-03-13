@@ -27,4 +27,9 @@ public class Rankings {
         return this.movies[ranking - 1];
     }
 
+    public void addToBottomOfList(Movie movie){
+        this.movies[9] = movie;
+        movie.setRanking(10);
+    }
+
 }
