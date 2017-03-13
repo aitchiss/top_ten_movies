@@ -119,4 +119,20 @@ public class RankingsTest {
         rankings.decreaseRanking("Young Guns");
         assertEquals(5, movie3.getRanking());
     }
+
+    @Test
+    public void decreaseRankingChangesRankingOfOtherMovies(){
+        Rankings rankings = new Rankings(moviesToAdd);
+        rankings.decreaseRanking("Young Guns");
+        assertEquals(4, movie5.getRanking());
+    }
+
+    @Test
+    public void decreaseRankingChangesOrderOfArray(){
+        Rankings rankings = new Rankings(moviesToAdd);
+        rankings.decreaseRanking("Young Guns");
+        assertEquals(movie3, rankings.getMovieByRanking(5));
+        assertEquals(movie5, rankings.getMovieByRanking(4));
+        assertEquals(movie6, rankings.getMovieByRanking(6));
+    }
 }

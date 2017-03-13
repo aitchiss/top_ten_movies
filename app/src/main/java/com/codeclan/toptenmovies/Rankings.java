@@ -59,7 +59,23 @@ public class Rankings {
 
         //make sure sorted correctly
         sortListOrderByRanking();
+    }
 
+    public void decreaseRanking(String title){
+        Movie movie = findByTitle(title);
+        int oldRanking = movie.getRanking();
+        int newRanking = oldRanking + 1;
+
+        //change the movie below's ranking
+        int indexMovingTo = newRanking - 1;
+        Movie movieToMove = this.movies[indexMovingTo];
+        movieToMove.setRanking(indexMovingTo);
+
+        //update movie to new ranking
+        movie.setRanking(newRanking);
+
+        //make sure sorted correctly
+        sortListOrderByRanking();
     }
 
     public void sortListOrderByRanking(){
